@@ -1,0 +1,80 @@
+.container {
+  padding: 50px 0;
+  background-color: #f8f5eb;
+  color: var(--color-gentle-font);
+}
+
+.article {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.btnBack {
+  color: #a4958b;
+  margin-left: -5px;
+  margin-bottom: 15px;
+  transition: .3s ease;
+}
+
+.btnBack:hover {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.btnBack:active {
+  transform: translateX(-3px);
+}
+
+.header {
+  position: relative;
+  border-bottom: 1px solid #e3b888;
+}
+
+.header::before {
+  content: '';
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #e3b888;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+}
+
+.headerInfo {
+  color: #dcb789;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.contents {
+  /* font-family: FZ YouHei; */
+  line-height: 1.625;
+  font-size: 14px;
+}
+
+.article h1 {
+  font-size: 1.75em;
+}
+
+.article h2 {
+  font-size: 1.5em;
+}
+
+.article h3 {
+  font-size: 1.25em;
+}
+
+.article h4 {
+  font-size: 1.25em;
+}
+
+.article h5 {
+  font-size: 1em;
+}
+
+.article h6 {
+  font-size: 1em;
+}

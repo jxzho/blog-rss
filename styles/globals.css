@@ -1,5 +1,9 @@
+@import './var.css';
+@import './font.css';
+
 html,
 body {
+  background-color: var(--color-gentle);
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
