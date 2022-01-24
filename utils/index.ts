@@ -12,7 +12,7 @@ const postSuffixByType = {
 
 export const getPostBySlug = (slug: string[]) => {
   const path4Slug = join(postDir, ...slug) + '.' + postSuffixByType.markdown;
-  const fileContents = fs.readFileSync(path4Slug, 'utf-8');
+  const fileContents = fs.readFileSync(path4Slug, 'utf8');
   const { data, content } = matter(fileContents);
 
   return {

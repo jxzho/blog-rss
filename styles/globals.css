@@ -1,6 +1,10 @@
 @import './var.css';
 @import './font.css';
 
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   background-color: var(--color-gentle);
@@ -17,4 +21,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+code:not([class*="language-"]) {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', ui-monospace,  monospace;
+  font-weight: bold;
+  background-color: #ede3d5;
 }

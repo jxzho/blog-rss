@@ -14,7 +14,7 @@ const Home: NextPage = ({ posts }: any) => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>我的博客</h1>
+        <h1 className={styles.title + ' text-center'}>我的博客</h1>
         <ArticleList posts={posts} />
       </main>
     </div>

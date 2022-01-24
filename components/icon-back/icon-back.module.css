@@ -1,0 +1,16 @@
+.btnBack {
+  color: #a4958b;
+  margin-left: -5px;
+  margin-bottom: 15px;
+  transition: .3s ease;
+}
+
+.btnBack:hover {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.btnBack:active {
+  transform: translateX(-3px);
+}

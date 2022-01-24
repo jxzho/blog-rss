@@ -1,15 +1,7 @@
-.markdown {
-}
-
 .markdown blockquote {
   margin: 0;
   padding: 0 15px;
   border-left: 4px solid #ede3d5;
-}
-
-.markdown code {
-  line-height: 1.25em;
-  background-color: #ede3d5;
 }
 
 .markdown ul li::marker {
