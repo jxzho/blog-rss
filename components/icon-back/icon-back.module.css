@@ -1,7 +1,7 @@
 .btnBack {
+  display: inline-block;
   color: #a4958b;
   margin-left: -5px;
-  margin-bottom: 15px;
   transition: .3s ease;
 }
 

@@ -1,10 +1,59 @@
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown ul,
+.markdown ol {
+  margin: 0 0 1rem 2rem;
+  padding: 0;
+}
+.markdown ul li,
+.markdown ol li {
+  margin-bottom: 0.5rem;
+}
+
 .markdown blockquote {
   margin: 0;
   padding: 0 15px;
   border-left: 4px solid #ede3d5;
 }
 
-.markdown ul li::marker {
+.markdown ul > li::marker {
   font-size: 16px;
-  color: #E8DCCB;
+  color: #e8dccb;
+}
+
+.markdown img {
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.markdown a {
+  position: relative;
+}
+
+.markdown a::before {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0.8em;
+  height: 2px;
+  content: '';
+  display: block;
+  /* background-color: #AF5C09; */
+}
+.markdown:hover a::after {
+  content: '';
+  display: inline-block;
+  background-image: url('../../assets/svg/link.svg');
+  background-size: 15px 15px;
+  width: 15px;
+  height: 15px;
+  vertical-align: text-bottom;
+  margin: 0 2px;
 }

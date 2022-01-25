@@ -1,6 +1,10 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
+import { readPath } from './path'
+
+export * from './base'
+export * from './path'
 
 const isDir = (path: string) => fs.statSync(path).isDirectory();
 
@@ -36,13 +40,15 @@ export const getFiles = (
       return curRes;
     }
   });
-  return res.length === 0 ? files : files.flat();
+  return files
+  // return res.length === 0 ? files : files.flat();
 };
 
 export const getAllPosts = () => {
   const posts = getFiles(postDir);
-  const realPosts = posts.map((item) => {
-    const slug = Array.isArray(item) ? item : [item];
+  const paths = readPath(posts)
+  const realPosts = paths.map((item) => {
+    const slug = item.split('/')
     const postMatter = getPostBySlug(slug);
     return {
       ...postMatter,

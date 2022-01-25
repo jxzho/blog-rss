@@ -1,5 +1,6 @@
 import styles from './article-list.module.css';
 import Link from 'next/link';
+import { Tags } from '../tags/tags';
 
 const isArr = Array.isArray;
 
@@ -63,16 +64,23 @@ export const ArticleList = ({
   }[];
 }) => {
   return (
-    <div className='sm:w-96 mx-auto'>
-      {posts.map(({ data: { title, desc, updateAt }, slug }, index) => (
-        <div className={styles['article-item']} key={index}>
-          <Link href={getPostUrl(slug)}>
-            <a className={styles['title'] + ' text-lg font-bold'}>{title}</a>
-          </Link>
-          {desc && <div className={styles['intro']}>{desc}</div>}
-          <div className={styles['info'] + ' text-xs'}>{updateAt}</div>
-        </div>
-      ))}
+    <div className="sm:w-96 mx-auto">
+      {posts.map(({ data: { title, desc, tag, updateAt }, slug }, index) => {
+        const isShowIntro = desc || tag
+        return (
+          <div className={styles['article-item']} key={index}>
+            <Link href={getPostUrl(slug)}>
+              <a className={styles['title'] + ' text-lg font-bold'}>{title}</a>
+            </Link>
+            {isShowIntro && (
+              <div className={styles['intro']}>
+                <span>{desc}</span> {tag && <Tags tags={tag} />}
+              </div>
+            )}
+            <div className={styles['info'] + ' text-xs'}>{updateAt}</div>
+          </div>
+        );
+      })}
     </div>
   );
 };

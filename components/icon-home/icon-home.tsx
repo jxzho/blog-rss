@@ -1,13 +1,14 @@
 import { useRouter } from 'next/router';
-import styles from './icon-back.module.css';
+import styles from './icon-home.module.css';
 
-export const IconBack = () => {
+export const IconHome = () => {
   const router = useRouter();
+  const goHome = () => router.push('/');
   return (
-    <div className={styles.btnBack}>
+    <div className={styles.iconHome}>
       <svg
-        onClick={router.back}
-        className="icon-back"
+        onClick={goHome}
+        className="icon-home"
         viewBox="0 0 1024 1024"
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -20,8 +21,8 @@ export const IconBack = () => {
           </linearGradient>
         </defs>
         <path
-          d="M579.05 890.2l-44.4 44.4c-18.8 18.8-49.2 18.8-67.8 0L78.05 546c-18.8-18.8-18.8-49.2 0-67.8l388.8-388.8c18.8-18.8 49.2-18.8 67.8 0l44.4 44.4c19 19 18.6 50-.8 68.6l-241 229.6h574.8c26.6 0 48 21.4 48 48v64c0 26.6-21.4 48-48 48h-574.8l241 229.6c19.6 18.6 20 49.6.8 68.6z"
           fill="url(#grad1)"
+          d="M512 32L0 544l96 96 96-96v416h256V768h128v192h256V544l96 96 96-96L512 32zm0 416a64 64 0 1 1 0-128 64 64 0 0 1 0 128z"
         />
       </svg>
     </div>

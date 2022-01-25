@@ -1,0 +1,15 @@
+.tag {
+  padding: 2px 12px;
+  border-radius: 20px;
+  background-color: #f2e2cb;
+  color: #AF5C09;
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: top;
+  @apply text-xs;
+}
+
+.tag::selection {
+  background: var(--color-gentle-font);
+  color: #f2e2cb;
+}

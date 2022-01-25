@@ -1,5 +1,5 @@
 import styles from './markdown-styles.module.css'
-import 'prismjs/themes/prism-twilight.css'
+import 'prismjs/themes/prism-okaidia.css'
 
 export const PostBody = (props: { content: string }) => {
   return (

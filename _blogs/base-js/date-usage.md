@@ -1,7 +1,7 @@
 ---
 title: 'Date 日期操作基础讲解'
-desc: 'desc'
-tag: 'base-js'
+desc: ''
+tag: ['JavaScript', 'Date']
 updateAt: '2020-10-07'
 ---
 
@@ -9,8 +9,8 @@ updateAt: '2020-10-07'
 
 ## Usage
 
-- `Date() === new Date().toString()`，Date构造器使用
-- `var time = new Date()`，获取当前客户端本机时间(当前获取的时间不能作为重要的参考依据)
+- `Date() === new Date().toString()`，`Date` 构造器简单使用
+- `var time = new Date()`，获取当前客户端本机时间（当前获取的时间不能作为重要的参考依据）
   ```js
   // => 获取的结果是一个日期格式的对象：Thu May 10 2018 19:56:29 GMT+0800 (中国标准时间)
   typeof time === 'object' // true

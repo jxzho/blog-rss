@@ -1,0 +1,14 @@
+.iconHome {
+  color: #a4958b;
+  transition: .3s ease;
+}
+
+.iconHome:hover {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.iconHome:active {
+  transform: translateY(3px);
+}

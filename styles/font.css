@@ -1,5 +1,31 @@
+/* 方正悠黑 */
 @font-face {
   font-family: FZ YouHei;
   font-weight: normal;
   src: url("https://static.junxio.com/static/font/FZYouHJW_508R.TTF") format('truetype');
+}
+
+/* smartisan T 黑 */
+@font-face {
+  font-family: ST H;
+  font-weight: bold;
+  src: url('https://static.junxio.com/static/font/Smartisan_Compact-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: ST H;
+  font-weight: bolder;
+  src: url('https://static.junxio.com/static/font/Smartisan_Compact-Heavy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: ST H;
+  font-weight: lighter;
+  src: url('https://static.junxio.com/static/font/Smartisan_Compact-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: ST H;
+  font-weight: normal;
+  src: url('https://static.junxio.com/static/font/Smartisan_Compact-Regular.ttf') format('truetype');
 }
