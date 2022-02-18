@@ -15,7 +15,11 @@ const Docs: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to{' '}
-          <a target="_blank" href="https://nextjs.org">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://nextjs.org"
+          >
             Next.js!
           </a>
         </h1>
@@ -28,6 +32,7 @@ const Docs: NextPage = () => {
         <div className={styles.grid}>
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://nextjs.org/docs"
             className={styles.card}
           >
@@ -37,6 +42,7 @@ const Docs: NextPage = () => {
 
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://nextjs.org/learn"
             className={styles.card}
           >
@@ -46,6 +52,7 @@ const Docs: NextPage = () => {
 
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://github.com/vercel/next.js/tree/master/examples"
             className={styles.card}
           >
@@ -55,6 +62,7 @@ const Docs: NextPage = () => {
 
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
           >

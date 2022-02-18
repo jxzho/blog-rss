@@ -50,10 +50,13 @@ export const getAllPosts = () => {
   const realPosts = paths.map((item) => {
     const slug = item.split('/')
     const postMatter = getPostBySlug(slug);
-    return {
+    
+    const data = {
       ...postMatter,
       slug,
-    };
+    }
+
+    return data;
   });
   return realPosts;
 };

@@ -64,9 +64,9 @@ export const ArticleList = ({
   }[];
 }) => {
   return (
-    <div className="sm:w-96 mx-auto">
+    <>
       {posts.map(({ data: { title, desc, tag, updateAt }, slug }, index) => {
-        const isShowIntro = desc || tag
+        const isShowIntro = desc || tag;
         return (
           <div className={styles['article-item']} key={index}>
             <Link href={getPostUrl(slug)}>
@@ -81,6 +81,6 @@ export const ArticleList = ({
           </div>
         );
       })}
-    </div>
+    </>
   );
 };

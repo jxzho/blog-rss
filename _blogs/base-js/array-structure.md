@@ -29,7 +29,7 @@ updateAt: '2021-01-25'
 
 - ### 实现数组的增加、修改、删除
     ```javascript
-    var ary = [1,2,3];
+    var ary = [1, 2, 3]
 
     //增加
     //1、push：向数组的末尾追加一个新的内容
@@ -43,7 +43,7 @@ updateAt: '2021-01-25'
     ·原来数组改变了
 
     //3、把数组当做一个普通的对象，使用对象键值对的操作，给其设置新的属性（索引）
-    ary[ary.length]=xxx 向数组的末尾追加了新的内容
+    ary[ary.length] = xxx 向数组的末尾追加了新的内容
     ```
     ```javascript
     //删除
@@ -65,25 +65,25 @@ updateAt: '2021-01-25'
     ```javascript
     //splice：数组中内置的方法，可以实现数组的增加、修改、删除
     splice实现删除:
-    splice(n,m):从索引n开始删除m个（m不写是删除到数组的末尾）
+    splice(n, m):从索引n开始删除m个（m不写是删除到数组的末尾）
     ·返回值：被删除的内容（以一个新数组保存）
     ·原来的数组改变了
     splice(0): 清空数组
     splice():一项都不删除，返回一个新的空数组
-    splice(0,1):删除数组开头一项
-    splice(ary.length-1,1):删除数组末尾一项
+    splice(0, 1):删除数组开头一项
+    splice(ary.length - 1, 1):删除数组末尾一项
 
     splice实现修改:
-    splice(n,m,x):在原有删除的基础上，用x代替删除的内容
+    splice(n, m, x):在原有删除的基础上，用x代替删除的内容
 
     splice实现增加
-    splice(n,0,x):在修改的基础上，我们一项都不删除，把x插入到索引n的前面
-    splice(0,0,x):向数组开头追加x
-    splice(ary.length,0,x):向数组末尾追加x
+    splice(n, 0, x):在修改的基础上，我们一项都不删除，把x插入到索引n的前面
+    splice(0, 0, x):向数组开头追加x
+    splice(ary.length, 0, x):向数组末尾追加x
     ```
     ```javascript
     //slice:数组的查询
-    ·参数：slice(n,m) 从索引n开始找到索引为m处（不包含m）
+    ·参数：slice(n, m) 从索引n开始找到索引为m处（不包含m）
     ·返回值：把找到的部分以一个新数组返回
     原来的数组不变
 
@@ -92,17 +92,17 @@ updateAt: '2021-01-25'
     slice支持负数索引，如果传递的索引为负数，浏览器解析的时候是按照 总长度+负数索引 来处理的
     ```
     ```javascript
-    concat:将多个数组拼接在一起
+    concat：将多个数组拼接在一起
     ·参数：要拼接的内容（内容放在原数组的后面），可以是一个数组，也可以是一些数据值
     ·返回：拼接后的新数组
     ·原来的数组不变
 
-    concat()什么都没有凭借，相当于把原有的数组克隆一份一模一样的新数组出来
+    concat() 什么都没有凭借，相当于把原有的数组克隆一份一模一样的新数组出来
     ```
 
 - ### 把数组转换为字符串
     ```javascript
-    1、toString:实现把数组转化为字符串（转换后的字符串以逗号分隔每一项）
+    1、toString：实现把数组转化为字符串（转换后的字符串以逗号分隔每一项）
     ·参数：无
     ·返回值：转换的字符串
     ·原有数组不变
@@ -116,72 +116,72 @@ updateAt: '2021-01-25'
     //=>已知数组中的每一项都是数字，想实现数组求和，我们如何实现？
     //1、循环实现
     //2、利用join
-    var total=eval(ary.join('+')); //->eval：把字符串变为JS表达式执行
+    var total = eval(ary.join('+')); //->eval：把字符串变为JS表达式执行
     ```
 
 - ### 实现数组中每一项的排序和排列
     ```javascript
-    1、reverse:把数组中的每一项倒过来排列
+    1. reverse：把数组中的每一项倒过来排列
     ·参数：无
     ·返回值：排序号的数组
     ·原来数组改变
 
-    2、sort:
+    2. sort：
     ·参数:无或者回调函数
     ·返回值：排序后的数组
     ·原有数组的改变
 
-    不传递参数的情况下:可以给10以内的数字进行排列，但是超过10的就无法处理了（多位数只识别第一位）
+    不传递参数的情况下：可以给10以内的数字进行排列，但是超过10的就无法处理了（多位数只识别第一位）
 
-    ary.sort(function(a,b){
-        return a-b;//升序
-        return b-a;//降序
+    ary.sort(function(a, b) {
+        return a - b; //升序
+        return b - a; //降序
     });
     ```
 
 - ### 验证数组中是否包含某一项
     ```javascript
-    indexOf/lastIndexOf:获取当前项在数组中第一次或者最好一次出现位置的索引
+    indexOf/lastIndexOf：获取当前项在数组中第一次或者最好一次出现位置的索引
     · 数组中的这两个方法在IE6~8下不兼容
     · 字符串中的这两个方法兼容所有的浏览器
 
-    ·如果当前数组中并没有这一项吗，返回的索引是-1，我们根据这一点可以验证数组中是否包含这一项
+    · 如果当前数组中并没有这一项吗，返回的索引是-1，我们根据这一点可以验证数组中是否包含这一项
 
-    if(ary.indexOf(12)>-1){
+    if (ary.indexOf(12) > -1) {
         //->数组中包含12
     }
     ```
 
 - ### 遍历数组中每一项的方法
     ```javascript
-    //=>以下方法在IE6~8下都不兼容
+    //=> 以下方法在IE6~8下都不兼容
 
-    · forEach:遍历数组中的每一项
-    ary.forEach(function(value,index,ary){
-        //=>数组中有多少项，当前回调函数执行多少次；每一次传递进来的value就是当前遍历数组对象的值，index就是遍历对象这一项的索引
+    · forEach：遍历数组中的每一项
+    ary.forEach(function(value, index, ary) {
+        //=> 数组中有多少项，当前回调函数执行多少次；每一次传递进来的value就是当前遍历数组对象的值，index就是遍历对象这一项的索引
     });
 
-    · map:遍历数组中的每一项
-    ary.map(function(value,index,ary){
-        //=>数组中有多少项，当前回调函数执行多少次；每一次传递进来的value就是当前遍历数组对象的值，index就是遍历对象这一项的索引
+    · map：遍历数组中的每一项
+    ary.map(function(value, index, ary) {
+        //=> 数组中有多少项，当前回调函数执行多少次；每一次传递进来的value就是当前遍历数组对象的值，index就是遍历对象这一项的索引
         return xxx; //=>return后面返回的结果就是把当前遍历的这一项修改为xxx
     });
 
-    filter
-    find
-    reduce
-    every
+    · filter
+    · find
+    · reduce
+    · every
     ```
 
 - ### 数组去重
     ```javascript
     //双循环遍历
-    var ary = [1,1,3,2,4,2,6,3];
-    for(var i=0;i<ary.length;i++){
+    var ary = [1, 1, 3, 2, 4, 2, 6, 3];
+    for (var i = 0; i < ary.length; i++) {
         var item = ary[i];
-        for(var j=i+1;j<ary.length;j++){
+        for (var j = i + 1; j < ary.length; j++) {
             if(item == ary[j]){
-                ary.splice(j,1);
+                ary.splice(j, 1);
                 j--;
             }
         }
@@ -190,13 +190,13 @@ updateAt: '2021-01-25'
 
     ```javascript
     //indexOf处理
-    var ary = [1,1,3,2,4,2,6,3];
-    for(var i=0;i<ary.length;i++){
+    var ary = [1, 1, 3, 2, 4, 2, 6, 3];
+    for (var i = 0; i < ary.length; i++) {
         var cur = ary[i]; 
-        var curNextAry = ary.slice(i+1);
+        var curNextAry = ary.slice(i + 1);
 
-        if(curNextAry.indexOf(cur) >-1){
-            ary.splice(i,1);
+        if (curNextAry.indexOf(cur) > -1){
+            ary.splice(i, 1);
             i--;
         }
     }
@@ -205,14 +205,14 @@ updateAt: '2021-01-25'
     //对象键值对处理
     Array.prototype.myUnique = function () {
         var obj = {};
-        for(var i=0;i<this.length;i++){
+        for (var i = 0; i < this.length; i++) {
             var cur = this[i];
-            if(typeof obj[cur] === 'undefined'){
+            if (typeof obj[cur] === 'undefined'){
                 obj[cur] = cur;
-            }else{
+            } else {
                 // ary.splice(i,1);
                 // i--;  //ie6~8不兼容
-                this[i] = this[this.length-1];
+                this[i] = this[this.length - 1];
                 this.length--;
                 i--;
                 continue;

@@ -1,8 +1,4 @@
-import styles from './tags.module.css';
-
-const Tag = (props: { tag: string }) => {
-  return <span className={styles.tag}>{props.tag}</span>;
-};
+import { Tag } from './tag'
 
 export const Tags = (props: { tags: string[] | string }) => {
   const tags = props.tags;
