@@ -41,7 +41,7 @@ c = 13; // 报错：常量存储的值不能修改
 
    ```javascript
    var student_info;
-   var $xxx; // 一般是应用JQ获取到的值
+   var $xxx; // 一般是应用 Jquery 获取到的值
    var _xxx; // 一般这样的情况代表变量是一个全局或公用的变量
    ```
 
@@ -58,7 +58,7 @@ c = 13; // 报错：常量存储的值不能修改
   - `null`: 空对象指针
   - `undefined`: 未定义
   - `symbol`: 标识
-  - `biginit`: 任意大的整数
+  - `bigint`: 任意大的整数
 
 - **引用数据类型**
   - `object` 对象数据类型
@@ -153,26 +153,32 @@ match
 
 ### number 数字
 
-> 0 12 -12 -12.5 , JS 中多增加了一个 number 类型的数据：`NaN`
-> typeof NaN -> "number"
+> 0, 12, -12, -12.5
+>
+> **JS**中多增加了一个 `number` 类型的数据 `NaN`
+
+```javascript
+typeof NaN // "number"
+```
 
 #### **`NaN`**
 
-> not a number：不是一个数字，但是属于 `number 类型
+> Not A Number：不是一个数字，但是属于 `number` 类型
 >
-> NaN == NaN : false, NaN 和任何其他值都不相等
+> NaN == NaN 结果为 `false`, `NaN` 和任何其他值都不相等
 
 #### **`isNaN()`**
 
-> 用来检测当前这个值是否是非有效数字，如果不是有效数字检测的结构是 true，反之有效数字则为 false
+> 用来检测当前这个值是否是非有效数字
+> 不是有效数字检测的结果是 `true`
+> 反之有效数字则为 `false`
 
 ```javascript
-isNaN(0) -> false
-
-isNaN(NaN) -> true
+isNaN(0) // false
+isNaN(NaN) // true
 
 // 当我们使用 `isNaN` 检测值的时候，检测的值不是 `number` 类型的
-// 浏览器会默认的把值先转换为 `number` 类型，然后再去测1111
+// 浏览器会默认的把值先转换为 `number` 类型，然后再去检测
 isNaN('12') -> false  
 ```
 
@@ -239,7 +245,7 @@ parseFloat('12.5px') ->12.5
 > ''：空字符串，没有
 > 0：也可以理解为没有
 
-`空字符串和null的区别`
+**空字符串** 和 `null` 的区别
 
 > 都是去种树
 > 空字符串属于挖了个坑，但是没有种任何东西
@@ -247,7 +253,7 @@ parseFloat('12.5px') ->12.5
 >
 > 空字符串相对于 null 来说开辟了内存，消耗了那么一丢丢的性能
 
-`null和undefined的区别`
+`null` 和 `undefined` 的区别
 
 > null 一般都是暂时没有，预期中以后会有的（可能以后也没有到预期）：在 JS 中 null 一般都是手动赋值为 null，后期我们再给其赋具体值
 
@@ -257,29 +263,33 @@ parseFloat('12.5px') ->12.5
 > 我的女朋友是 null
 > 我的男朋友是 undefined
 
-`高程3拓展` ###基本包装类型
+ #### 基本包装类型（高程3拓展）
 
 ```javascript
 var s1 = "some text";
 var s2 = s1.substring(2);
 
-//当第二行访问s1时，访问的过程处于一种读取模式，也就是要从内存中读取这个字符串的值。而在读取模式中访问字符串时，后台都会自动完成以下处理。
-1、创建String类型的一个实例
-2、在这个实例上调用指定方法
-3、销毁这个实例
-以上三个步骤可以想象成执行了下列ECMAScript代码：
-1、var s = new String("some text");
-2、var s2 = s.substring(2);
-3、s = null;
+// 当第二行访问s1时，访问的过程处于一种读取模式
+// 也就是要从内存中读取这个字符串的值。而在读取模式中访问字符串时，后台都会自动完成以下处理。
+1. 创建String类型的一个实例
+2. 在这个实例上调用指定方法
+3. 销毁这个实例
+
+// 以上三个步骤可以想象成执行了下列ECMAScript代码：
+1. var s = new String("some text");
+2. var s2 = s.substring(2);
+3. s = null;
 ```
 
 > 所有基本包装类型的对象在转换为布尔类型值都为 true（所有对象在转换为布尔类型值都为 true）
 
-`Boolean类型`
+#### `Boolean类型`
 
-> Boolean 类型的实例重写了 valueOf()方法，返回基本类型值 true 或 false，重写了 toString()，返回字符串"true"或"false"
-> 若是 Object 对象实例 obj，obj.toString() => "[object Object]"
-> Boolean 对象在 ECMAScript 中用处不大，经常造成误解，常见问题就是在布尔表达式中使用 Boolean 对象，例如：
+> `Boolean` 类型的实例重写了 `valueOf()` 方法，返回基本类型值 `true` 或 `false`，重写了 `toString()`，返回字符串 `"true" `或 ` "false"`
+>
+> 若是 `Object` 对象实例 `obj`，`obj.toString()` => `"[object Object]"`
+>
+> `Boolean` 对象在 ECMAScript 中用处不大，经常造成误解，常见问题就是在布尔表达式中使用 `Boolean` 对象，例如：
 
 ```javascript
 var falseObject = new Boolean(false);
@@ -287,39 +297,38 @@ var result = falseObject && '123';
 console.log(result); // "123"
 ```
 
-> 布尔表达式中 false && "123" => false，在第二行代码中是对**falseObject 对象**而不是对它的值（false）进行求值，**布尔表达式中的所有对象都会被转换为 true**，因此 falseObject 对象在布尔表达式中代表的是 true。
-> => true && "123" => "123"
+> 布尔表达式中 `false && "123"` => `false`，在第二行代码中是对 **falseObject 对象**
+>
+> 而不是对它的值（false）进行求值，**布尔表达式中的所有对象都会被转换为 `true`**
+>
+> 因此 `falseObject` 对象在布尔表达式中代表的是 `true`。
+>
+> `true && "123"` => `"123"`
 
-###建议永远不要使用 Boolean 对象
+### 建议永远不要使用 `Boolean` 对象
 
-`Number类型`
+#### `Number`类型
 
-> 重写了 valueOf()、toLocaleString()、toString()方法。valueOf 返回 Number 实例对象表示的基本类型值
+> 重写了 valueOf()、toLocaleString()、toString()方法。
+>
+> `valueOf` 返回 `Number` 实例对象表示的基本类型值
 
 ```javascript
 var num = new Number(123);
-console.log(num);
-//Number {123}
-console.log(num.valueOf());
-//123
-console.log(num.toString());
-//"123"
-console.log(Object.prototype.toString.call(num));
-// "[object Number]"
-console.log(Object.prototype.valueOf.call(num));
-// Number {123}
+
+console.log(num); // Number {123}
+console.log(num.valueOf()); // 123
+console.log(num.toString()); // "123"
+console.log(Object.prototype.toString.call(num)); // "[object Number]"
+console.log(Object.prototype.valueOf.call(num)); // Number {123}
 ```
 
-`toString返回几进制的字符串`
+#### `toString`返回n进制的字符串
 
 ```javascript
 var num = 123;
-num.toString(2);
-// "1111011"
-num.toString(4);
-// "1323"
-num.toString(8);
-// "173"
-num.toString(16);
-// "7b"
+num.toString(2); // "1111011"
+num.toString(4); // "1323"
+num.toString(8); // "173"
+num.toString(16); // "7b"
 ```
