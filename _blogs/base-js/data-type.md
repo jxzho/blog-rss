@@ -81,7 +81,7 @@ c = 13; // 报错：常量存储的值不能修改
   Object.prototype.toString.call(str) === '[object String]'; // true
   ```
 
-### **`typeof`**
+#### typeof
 
 > 使用 typeof 检测，返回的结构是一个字符串，字符中中包含的内容证明了值是属于什么类型的
 
@@ -151,7 +151,7 @@ match
 
 ...
 
-### number 数字
+### number数字
 
 > 0, 12, -12, -12.5
 >
@@ -161,13 +161,13 @@ match
 typeof NaN // "number"
 ```
 
-#### **`NaN`**
+**NaN**
 
 > Not A Number：不是一个数字，但是属于 `number` 类型
 >
 > NaN == NaN 结果为 `false`, `NaN` 和任何其他值都不相等
 
-#### **`isNaN()`**
+**isNaN()**
 
 > 用来检测当前这个值是否是非有效数字
 > 不是有效数字检测的结果是 `true`
@@ -182,7 +182,7 @@ isNaN(NaN) // true
 isNaN('12') -> false  
 ```
 
-#### **`Number()`**
+**Number()**
 
 > 把其他数据类型值转化为 number 类型的值
 
@@ -203,7 +203,7 @@ Number({}) => NaN
 Number([]) => 0
 ```
 
-#### **`parseInt()`**
+**parseInt()**
 
 > 也是把其他数据类型值转换为 number，和 Number 方法在处理字符串的时候有所区别
 
@@ -228,7 +228,7 @@ parseInt("1f",16);        //返回 31 (16+15) f -> 1, 2, 3 ... 9, 10(a), 11(b), 
 parseInt("010");        //未定：返回 10 或 8
 ```
 
-#### **`parseFloat()`**
+**parseFloat()**
 
 > 在 parseInt 的基础上可以识别小数点
 
@@ -237,7 +237,7 @@ parseInt('12.5px') ->12
 parseFloat('12.5px') ->12.5
 ```
 
-### `null` 和 `undefined`
+### null & undefined
 
 > null：空，没有
 > undefined： 未定义，没有
@@ -263,7 +263,9 @@ parseFloat('12.5px') ->12.5
 > 我的女朋友是 null
 > 我的男朋友是 undefined
 
- #### 基本包装类型（高程3拓展）
+---
+
+#### 基本包装类型（高程3拓展）
 
 ```javascript
 var s1 = "some text";
@@ -283,13 +285,13 @@ var s2 = s1.substring(2);
 
 > 所有基本包装类型的对象在转换为布尔类型值都为 true（所有对象在转换为布尔类型值都为 true）
 
-#### `Boolean类型`
+#### Boolean类型
 
-> `Boolean` 类型的实例重写了 `valueOf()` 方法，返回基本类型值 `true` 或 `false`，重写了 `toString()`，返回字符串 `"true" `或 ` "false"`
->
-> 若是 `Object` 对象实例 `obj`，`obj.toString()` => `"[object Object]"`
->
-> `Boolean` 对象在 ECMAScript 中用处不大，经常造成误解，常见问题就是在布尔表达式中使用 `Boolean` 对象，例如：
+`Boolean` 类型的实例重写了 `valueOf()` 方法，返回基本类型值 `true` 或 `false`，重写了 `toString()`，返回字符串 `"true" `或 ` "false"`
+
+若是 `Object` 对象实例 `obj`，`obj.toString()` => `"[object Object]"`
+
+`Boolean` 对象在 ECMAScript 中用处不大，经常造成误解，常见问题就是在布尔表达式中使用 `Boolean` 对象，例如：
 
 ```javascript
 var falseObject = new Boolean(false);
@@ -297,21 +299,21 @@ var result = falseObject && '123';
 console.log(result); // "123"
 ```
 
-> 布尔表达式中 `false && "123"` => `false`，在第二行代码中是对 **falseObject 对象**
->
-> 而不是对它的值（false）进行求值，**布尔表达式中的所有对象都会被转换为 `true`**
->
-> 因此 `falseObject` 对象在布尔表达式中代表的是 `true`。
->
-> `true && "123"` => `"123"`
+布尔表达式中 `false && "123"` => `false`，在第二行代码中是对 **falseObject 对象**
 
-### 建议永远不要使用 `Boolean` 对象
+而不是对它的值（false）进行求值，**布尔表达式中的所有对象都会被转换为 `true`**
 
-#### `Number`类型
+因此 `falseObject` 对象在布尔表达式中代表的是 `true`。
 
-> 重写了 valueOf()、toLocaleString()、toString()方法。
->
-> `valueOf` 返回 `Number` 实例对象表示的基本类型值
+`true && "123"` => `"123"`
+
+> \* 建议永远不要使用 `Boolean` 对象
+
+#### Number类型
+
+重写了 valueOf()、toLocaleString()、toString()方法。
+
+`valueOf` 返回 `Number` 实例对象表示的基本类型值
 
 ```javascript
 var num = new Number(123);
@@ -322,8 +324,7 @@ console.log(num.toString()); // "123"
 console.log(Object.prototype.toString.call(num)); // "[object Number]"
 console.log(Object.prototype.valueOf.call(num)); // Number {123}
 ```
-
-#### `toString`返回n进制的字符串
+**toString返回n进制的字符串**
 
 ```javascript
 var num = 123;
