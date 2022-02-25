@@ -33,6 +33,6 @@ jobs:
           timeout: "15m"
           key: ${{ secrets.KEY }}
           port: "22"
-          source: ".nuxt/*,static/*,node_modules/*,nuxt.config.js,package.json,yarn.lock"
+          source: "*"
           target: /home/sites/blog
           overwrite: true
