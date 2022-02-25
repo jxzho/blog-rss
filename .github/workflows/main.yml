@@ -33,6 +33,6 @@ jobs:
           timeout: "15m"
           key: ${{ secrets.KEY }}
           port: "22"
-          source: "*"
+          source: "./*"
           target: /home/sites/blog
           overwrite: true
