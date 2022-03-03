@@ -33,6 +33,6 @@ jobs:
           timeout: "15m"
           key: ${{ secrets.KEY }}
           port: "22"
-          source: "build/*,package.json,next.config.json,yarn.lock,node_modules/*"
+          source: "build/*,package.json,next.config.json,yarn.lock"
           target: /home/sites/blog
           overwrite: true
