@@ -24,11 +24,11 @@ const Home: NextPage = ({ posts, tagMap }: any) => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title + ' text-center'} onClick={onTitleClick}>
+        <h1 className={styles.title + ' text-center sm:mt-12 sm:mb-8'} onClick={onTitleClick}>
           我的博客
         </h1>
         <div className="sm:w-96 mx-auto">
-          <div className="sm:mb-1.5">
+          <div className="sm:mb-6">
             {Object.keys(tagMap).map((tag, index) => (
               <Tag tag={tag} key={`tag-${index}`} onTagClick={onTagClick} />
             ))}

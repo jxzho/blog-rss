@@ -20,12 +20,12 @@
 .markdown blockquote {
   margin: 0;
   padding: 0 15px;
-  border-left: 4px solid #ede3d5;
+  border-left: 4px solid #c9c0b2;
 }
 
 .markdown ul > li::marker {
   font-size: 16px;
-  color: #e8dccb;
+  color: #ada599;
 }
 
 .markdown img {
