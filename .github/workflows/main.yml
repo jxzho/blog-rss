@@ -34,7 +34,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: "22"
           timeout: "30m"
-          source: "build/,public/,package.json"
+          source: "build/,public/,next.config.js,package.json"
           target: /home/sites/blog
           overwrite: true
 
