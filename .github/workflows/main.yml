@@ -34,6 +34,18 @@ jobs:
           timeout: "30m"
           key: ${{ secrets.KEY }}
           port: "22"
-          source: "build/*"
+          source: "build/,public/,package.json"
           target: /home/sites/blog
           overwrite: true
+
+      - name: Restart Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.USER_NAME }}
+          key: ${{ secrets.KEY }}
+          port: "22"
+          script: |
+            cd /home/sites/blog
+            npm i
+            pm2 reload blog-jx
