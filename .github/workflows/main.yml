@@ -31,9 +31,9 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER_NAME }}
-          timeout: "30m"
           key: ${{ secrets.KEY }}
           port: "22"
+          timeout: "30m"
           source: "build/,public/,package.json"
           target: /home/sites/blog
           overwrite: true
@@ -45,6 +45,7 @@ jobs:
           username: ${{ secrets.USER_NAME }}
           key: ${{ secrets.KEY }}
           port: "22"
+          timeout: "30m"
           script: |
             cd /home/sites/blog
             npm i
