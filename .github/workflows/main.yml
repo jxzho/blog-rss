@@ -41,7 +41,7 @@ jobs:
       - name: Restart Server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.REMOTE_HOST }}
+          host: ${{ secrets.HOST }}
           username: ${{ secrets.USER_NAME }}
           key: ${{ secrets.KEY }}
           port: "22"
