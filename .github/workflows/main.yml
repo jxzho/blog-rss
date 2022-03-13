@@ -49,4 +49,4 @@ jobs:
           script: |
             cd /home/sites/blog
             npm i
-            pm2 reload blog-jx
+            pm2 reload blog
