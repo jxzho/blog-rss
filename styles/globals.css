@@ -1,5 +1,6 @@
 @import './var.css';
 @import './font.css';
+@import './prism.custom.css';
 
 /* @tailwind base; */
 @tailwind components;
@@ -23,13 +24,14 @@ a {
   box-sizing: border-box;
 }
 
-code:not([class*="language-"]) {
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', ui-monospace,  monospace;
-  background-color: #ede3d5;
-  @apply text-xs font-bold px-2;
+code:not([class*='language-']) {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', ui-monospace,
+    monospace;
+  background-color: #f2e2cb;
+  @apply text-xs font-bold px-2 py-1;
 }
 
 ::selection {
-  color: #AF5C09;
+  color: #af5c09;
   background: #f2e2cb;
 }

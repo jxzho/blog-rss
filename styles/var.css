@@ -1,7 +1,8 @@
 :root {
   --color-black: #494640;
-  --color-gentle: #f4ebd8;
-  --color-gentle-font: #552600;
+  --color-gentle: #f5f5f7;
+  /* #f4ebd8; */
+  --color-gentle-font: #1d1d1f;
 
   --color-link: #0070f3;
 }

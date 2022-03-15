@@ -4,7 +4,7 @@
 }
 
 .article-item .title {
-  color: #460000;
+  color: #1d1d1f;
   margin-bottom: 4px;
 }
 
@@ -25,7 +25,7 @@
 
 .article-item .info {
   /* font-size: 12px; */
-  color: #bfb1a5;
+  color: #aaa;
 }
 
 .article-item:not(:last-child) {
