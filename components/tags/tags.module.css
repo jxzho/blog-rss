@@ -11,6 +11,6 @@
 }
 
 .tag::selection {
-  background: var(--color-gentle-font);
   color: #f2e2cb;
+  background-color: #af5c09;
 }
