@@ -45,9 +45,8 @@
   height: 2px;
   content: '';
   display: block;
-  /* background-color: #AF5C09; */
 }
-.markdown:hover a::after {
+.markdown a::after {
   content: '';
   display: inline-block;
   background-image: url('../../assets/svg/link.svg');
