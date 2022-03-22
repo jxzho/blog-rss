@@ -11,9 +11,10 @@ type PostProps = {
   title: string;
   tag: string | string[];
   content: string;
+  icon: string;
 };
 
-const Posts: NextPage<PostProps> = ({ title, tag, content }) => {
+const Posts: NextPage<PostProps> = ({ title, tag, icon, content }) => {
   return (
     <div className={styles.container}>
       <article className={styles.article}>
@@ -28,6 +29,7 @@ const Posts: NextPage<PostProps> = ({ title, tag, content }) => {
           </div>
         </header>
         <div className={styles.tagBar}>
+          {icon && <img className={styles.icon} src={icon} />}
           <Tags tags={tag} />
         </div>
         <h1>{title}</h1>
@@ -48,6 +50,7 @@ export async function getStaticProps({ params }) {
     props: {
       title: data.title,
       tag: data.tag,
+      icon: data.icon || '',
       content,
     },
   };

@@ -40,6 +40,13 @@
   margin: 10px 0;
 }
 
+.icon {
+  height: 20px;
+  object-fit: contain;
+  vertical-align: top;
+  @apply mr-1;
+}
+
 .contents {
   font-family: ST H;
   line-height: 1.625;

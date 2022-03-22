@@ -8,6 +8,12 @@
   margin-bottom: 4px;
 }
 
+.article-item .icon {
+  height: 20px;
+  object-fit: contain;
+  vertical-align: top;
+}
+
 .article-item .intro {
   @apply text-xs;
 
@@ -40,10 +46,10 @@
 .article-item:hover .intro {
   max-height: 50px;
   margin-bottom: 5px;
-  transition: .8s ease;
+  transition: 0.8s ease;
 }
 
 .article-item:active {
   transform: translateY(3px);
-  transition: .3s ease;
+  transition: 0.3s ease;
 }

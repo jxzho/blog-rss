@@ -65,22 +65,27 @@ export const ArticleList = ({
 }) => {
   return (
     <>
-      {posts.map(({ data: { title, desc, tag, updateAt }, slug }, index) => {
-        const isShowIntro = desc || tag;
-        return (
-          <div className={styles['article-item']} key={index}>
-            <Link href={getPostUrl(slug)}>
-              <a className={styles['title'] + ' text-lg font-bold'}>{title}</a>
-            </Link>
-            {isShowIntro && (
-              <div className={styles['intro']}>
-                <span>{desc}</span> {tag && <Tags tags={tag} />}
-              </div>
-            )}
-            <div className={styles['info'] + ' text-xs'}>{updateAt}</div>
-          </div>
-        );
-      })}
+      {posts.map(
+        ({ data: { title, desc, tag, updateAt, icon }, slug }, index) => {
+          const isShowIntro = desc || tag;
+          return (
+            <div className={styles['article-item']} key={index}>
+              <Link href={getPostUrl(slug)}>
+                <a className={styles['title'] + ' text-lg font-bold'}>
+                  {title}
+                </a>
+              </Link>
+              {isShowIntro && (
+                <div className={styles['intro']}>
+                  {icon && <img className={styles['icon']} src={icon} />}
+                  <span>{desc}</span> {tag && <Tags tags={tag} />}
+                </div>
+              )}
+              <div className={styles['info'] + ' text-xs'}>{updateAt}</div>
+            </div>
+          );
+        }
+      )}
     </>
   );
 };
