@@ -36,3 +36,41 @@ class Teacher {
 keyof Person === 'name' | 'age' | 'gender'
 T extends 'name' === type T = 'name'
 ```
+
+## 类和接口
+
+```tsx
+// 类
+class Person {
+	name: 'dellzhong'
+}
+
+type result = keyof Person // <- 'name'
+
+// 接口
+interface Person {
+	name: string
+}
+
+keyof Person // <- 'name'
+```
+
+## 比较 K extends keyof T 和使用 keyof T
+
+- [stackoverflow](https://www.notion.so/keyof-2a8bfab08d2e44999b6f32189e405d82)
+- [yayu](https://ts.yayujs.com/handbook/KeyofTypeOperator.html#%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3)
+
+## 实战
+
+```tsx
+function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
+  return obj[key];
+}
+
+let x = { a: 1, b: 2, c: 3, d: 4 };
+
+getProperty(x, 'a');
+getProperty(x, 'm'); // <- error
+
+// Key === '"a" | "b" | "c" | "d"'
+```
