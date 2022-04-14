@@ -116,6 +116,7 @@ console.log(typeof typeof []); // string
 > 只有`0、NaN、空字符串、null、undefined`这五个数据值转换为布尔类型的 false，其余的都会变成 true
 
 - `!`
+
   - `!=`：不等于
   - 叹号在 JS 中还有一个作用：**取反**，先把值转为布尔类型，再进行取反
 
@@ -151,14 +152,14 @@ match
 
 ...
 
-### number数字
+### number 数字
 
 > 0, 12, -12, -12.5
 >
 > **JS**中多增加了一个 `number` 类型的数据 `NaN`
 
 ```javascript
-typeof NaN // "number"
+typeof NaN; // "number"
 ```
 
 **NaN**
@@ -179,7 +180,7 @@ isNaN(NaN) // true
 
 // 当我们使用 `isNaN` 检测值的时候，检测的值不是 `number` 类型的
 // 浏览器会默认的把值先转换为 `number` 类型，然后再去检测
-isNaN('12') -> false  
+isNaN('12') -> false
 ```
 
 **Number()**
@@ -265,7 +266,7 @@ parseFloat('12.5px') ->12.5
 
 ---
 
-#### 基本包装类型（高程3拓展）
+#### 基本包装类型（高程 3 拓展）
 
 ```javascript
 var s1 = "some text";
@@ -285,7 +286,7 @@ var s2 = s1.substring(2);
 
 > 所有基本包装类型的对象在转换为布尔类型值都为 true（所有对象在转换为布尔类型值都为 true）
 
-#### Boolean类型
+#### Boolean 类型
 
 `Boolean` 类型的实例重写了 `valueOf()` 方法，返回基本类型值 `true` 或 `false`，重写了 `toString()`，返回字符串 `"true" `或 ` "false"`
 
@@ -309,7 +310,7 @@ console.log(result); // "123"
 
 > \* 建议永远不要使用 `Boolean` 对象
 
-#### Number类型
+#### Number 类型
 
 重写了 valueOf()、toLocaleString()、toString()方法。
 
@@ -324,7 +325,8 @@ console.log(num.toString()); // "123"
 console.log(Object.prototype.toString.call(num)); // "[object Number]"
 console.log(Object.prototype.valueOf.call(num)); // Number {123}
 ```
-**toString返回n进制的字符串**
+
+**toString 返回 n 进制的字符串**
 
 ```javascript
 var num = 123;

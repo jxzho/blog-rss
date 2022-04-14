@@ -710,9 +710,9 @@ let c = new Child(10, 20, 30);
 
 - `typeof`
 
-    ```javascript
-    typeof symbolValue === 'symbol';
-    ```
+  ```javascript
+  typeof symbolValue === 'symbol';
+  ```
 
 - 不能使用 `new`
 - 接受字符串维为参数，表示对 Symbol 值的描述，为了在控制台显示便于区分，如果参数是 **对象** ，调用 **对象.toString()** 转为字符串，然后再生成 Symbol，相同参数会返回不同的值，所以参数只是作为 描述值
