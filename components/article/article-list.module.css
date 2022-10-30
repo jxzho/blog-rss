@@ -3,6 +3,11 @@
   transition: 0.3s ease;
 }
 
+.article-item:hover {
+  /* background-color: #e8deca; */
+  border-color: #dbd0bc;
+}
+
 .article-item .title {
   color: #1d1d1f;
   margin-bottom: 4px;
@@ -18,7 +23,6 @@
   @apply text-xs;
 
   line-height: 20px;
-  max-height: 0;
   overflow: hidden;
   font-weight: normal;
   color: #927c6e;
@@ -29,24 +33,17 @@
   overflow: hidden;
 }
 
+.article-item:hover .intro {
+  margin-bottom: 5px;
+  transition: 0.8s ease;
+}
+
 .article-item .info {
-  /* font-size: 12px; */
   color: #aaa;
 }
 
 .article-item:not(:last-child) {
   margin-bottom: 12px;
-}
-
-.article-item:hover {
-  /* background-color: #e8deca; */
-  border-color: #dbd0bc;
-}
-
-.article-item:hover .intro {
-  max-height: 50px;
-  margin-bottom: 5px;
-  transition: 0.8s ease;
 }
 
 .article-item:active {

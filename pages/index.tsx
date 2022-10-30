@@ -33,6 +33,9 @@ const Home: NextPage = ({ posts, tagMap }: any) => {
               <Tag tag={tag} key={`tag-${index}`} onTagClick={onTagClick} />
             ))}
           </div>
+
+          <div className='sm:hidden h-0 border-b-none border-dashed border-t-[0.1px] border-t-[#927c6e] my-2'></div>
+
           <ArticleList posts={postShown} />
         </div>
       </main>

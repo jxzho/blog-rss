@@ -69,14 +69,14 @@ export const ArticleList = ({
         ({ data: { title, desc, tag, updateAt, icon }, slug }, index) => {
           const isShowIntro = desc || tag;
           return (
-            <div className={styles['article-item']} key={index}>
+            <div className={'group ' + styles['article-item']} key={index}>
               <Link href={getPostUrl(slug)}>
                 <a className={styles['title'] + ' text-lg font-bold'}>
                   {title}
                 </a>
               </Link>
               {isShowIntro && (
-                <div className={styles['intro']}>
+                <div className={styles['intro'] + ' sm:!max-h-0 sm:group-hover:!max-h-12'}>
                   {icon && <img className={styles['icon']} src={icon} />}
                   <span>{desc}</span> {tag && <Tags tags={tag} />}
                 </div>
