@@ -34,7 +34,7 @@ const Home: NextPage = ({ posts, tagMap }: any) => {
             ))}
           </div>
 
-          <div className='sm:hidden h-0 border-b-none border-dashed border-t-[0.1px] border-t-[#927c6e] my-2'></div>
+          <div className='sm:hidden h-0 border-b-0 border-dashed border-t-[0.1px] border-t-[#927c6e] my-2'></div>
 
           <ArticleList posts={postShown} />
         </div>
