@@ -18,17 +18,17 @@ const Home: NextPage = ({ posts, tagMap }: any) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>我的博客</title>
+        <title>rss 小屋</title>
         <meta name="description" content="My Blog Site" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title + ' text-center sm:mt-12 sm:mb-8'} onClick={onTitleClick}>
-          我的博客
-        </h1>
         <div className="sm:w-96 mx-auto">
-          <div className="sm:mb-6">
+          <h1 className={styles.title + ' sm:my-6'} onClick={onTitleClick}>
+            文章
+          </h1>
+          <div className="sm:my-6">
             {Object.keys(tagMap).map((tag, index) => (
               <Tag tag={tag} key={`tag-${index}`} onTagClick={onTagClick} />
             ))}
