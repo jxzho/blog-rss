@@ -76,12 +76,12 @@ export const ArticleList = ({
                 </a>
               </Link>
               {isShowIntro && (
-                <div className={styles['intro'] + ' sm:!max-h-0 sm:group-hover:!max-h-12'}>
+                <div className={styles['intro'] + ' sm:group-hover:block'}>
                   {icon && <img className={styles['icon']} src={icon} />}
                   <span>{desc}</span> {tag && <Tags tags={tag} />}
                 </div>
               )}
-              <div className={styles['info'] + ' text-xs'}>{updateAt}</div>
+              <div className={styles['info'] + ' text-xs select-none'}>{updateAt}</div>
             </div>
           );
         }
