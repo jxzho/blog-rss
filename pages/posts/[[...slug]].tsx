@@ -12,9 +12,10 @@ type PostProps = {
   tag: string | string[];
   content: string;
   icon: string;
+  updateAt: string
 };
 
-const Posts: NextPage<PostProps> = ({ title, tag, icon, content }) => {
+const Posts: NextPage<PostProps> = ({ title, tag, icon, content, updateAt }) => {
   return (
     <div className={styles.container}>
       <article className={styles.article}>
@@ -24,7 +25,7 @@ const Posts: NextPage<PostProps> = ({ title, tag, icon, content }) => {
             <IconHome />
           </div>
           <div className={styles.headerInfo}>
-            <div className={styles.headerInfoLeft}>2021.11.12 08:30 PM</div>
+            <div className={styles.headerInfoLeft}>{ updateAt }</div>
             <div className={styles.headerInfoRight}>共 {content.length} 字</div>
           </div>
         </header>
@@ -52,6 +53,7 @@ export async function getStaticProps({ params }) {
       tag: data.tag,
       icon: data.icon || '',
       content,
+      updateAt: data.updateAt
     },
   };
 }
