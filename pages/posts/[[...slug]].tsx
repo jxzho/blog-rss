@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Head from 'next/head'
 import { getAllPosts, getPostBySlug } from '../../utils/index';
 import styles from '../../styles/Post.module.css';
 import { markdownToHtml } from '../../lib';
@@ -18,6 +19,11 @@ type PostProps = {
 const Posts: NextPage<PostProps> = ({ title, tag, icon, content, updateAt }) => {
   return (
     <div className={styles.container}>
+      
+      <Head>
+        <title>{ title } - Russell&apos;s Blog</title>
+      </Head>
+
       <article className={styles.article}>
         <header className={styles.header}>
           <div className="flex justify-between mb-4">

@@ -18,7 +18,7 @@ const Home: NextPage = ({ posts, tagMap }: any) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>rss 小屋</title>
+        <title>Russell&apos;s Blog</title>
         <meta name="description" content="My Blog Site" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
