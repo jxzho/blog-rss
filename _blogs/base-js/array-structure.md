@@ -11,7 +11,7 @@ updateAt: '2021-01-25'
 
 数组是以数字作为索引，索引从零开始，有一个 length 属性代表数组的长度
 
-![](https://static.junxio.com/assets/image-20220125174415098.png)
+![](https://junxio-static.oss-cn-shenzhen.aliyuncs.com/assets/image-20220125174415098.png)
 
 **类数组**：类似于数组，但是不是数组
 
