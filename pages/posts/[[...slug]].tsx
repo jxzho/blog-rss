@@ -26,7 +26,7 @@ const Posts: NextPage<PostProps> = ({ title, tag, icon, content, updateAt }) => 
 
       <article className={styles.article}>
         <header className={styles.header}>
-          <div className="flex justify-between mb-4">
+          <div className="flex justify-between mb-5">
             <IconBack />
             <IconHome />
           </div>

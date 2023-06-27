@@ -3,8 +3,7 @@
 .markdown h3,
 .markdown h4,
 .markdown h5 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  @apply my-5;
 }
 
 .markdown ul,
@@ -18,8 +17,7 @@
 }
 
 .markdown blockquote {
-  margin: 0;
-  padding: 0 15px;
+  @apply md:my-5 my-3 mx-0 md:pl-5 pl-3;  
   border-left: 4px solid #f2e2cb;
 }
 
@@ -34,6 +32,7 @@
 }
 
 .markdown a {
+  @apply text-gray-500;
   position: relative;
 }
 
@@ -46,6 +45,7 @@
   content: '';
   display: block;
 }
+
 .markdown a::after {
   content: '';
   display: inline-block;
@@ -55,4 +55,8 @@
   height: 15px;
   vertical-align: text-bottom;
   margin: 0 2px;
+}
+
+.markdown p {
+  @apply md:my-5 my-3;
 }

@@ -37,7 +37,7 @@
 }
 
 .tagBar {
-  margin: 10px 0;
+  @apply my-3.5;
 }
 
 .icon {
