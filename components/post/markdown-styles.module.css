@@ -8,8 +8,8 @@
 
 .markdown ul,
 .markdown ol {
-  margin: 0 0 1rem 2rem;
-  padding: 0;
+  @apply my-5 p-0;
+  margin-left: 1em;
 }
 .markdown ul li,
 .markdown ol li {
@@ -21,14 +21,15 @@
   border-left: 4px solid #f2e2cb;
 }
 
-.markdown ul > li::marker {
-  font-size: 16px;
-  color: #ada599;
+.markdown ul::marker, 
+.markdown ol::marker,
+.markdown li::marker {
+  color: #AF5C09;
 }
 
 .markdown img {
+  @apply py-1 align-middle;
   max-width: 100%;
-  margin-bottom: 1rem;
 }
 
 .markdown a {
@@ -50,9 +51,9 @@
   content: '';
   display: inline-block;
   background-image: url('../../assets/svg/link.svg');
-  background-size: 15px 15px;
-  width: 15px;
-  height: 15px;
+  background-size: 16px 16px;
+  width: 16px;
+  height: 16px;
   vertical-align: text-bottom;
   margin: 0 2px;
 }

@@ -21,7 +21,7 @@ const Posts: NextPage<PostProps> = ({ title, tag, icon, content, updateAt }) => 
     <div className={styles.container}>
       
       <Head>
-        <title>{ title } - Russell&apos;s Blog</title>
+        <title>《{ title }》Russell&apos;s Blog</title>
       </Head>
 
       <article className={styles.article}>
