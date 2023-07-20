@@ -67,21 +67,21 @@ export const ArticleList = ({
     <>
       {posts.map(
         ({ data: { title, desc, tag, updateAt, icon }, slug }, index) => {
-          const isShowIntro = desc || tag;
+          // const isShowIntro = desc || tag;
           return (
             <div className={'group ' + styles['article-item']} key={index}>
               <Link href={getPostUrl(slug)}>
-                <a className={styles['title'] + ' text-lg font-bold'}>
+                <a className={styles['title']}>
                   {title}
                 </a>
               </Link>
-              {isShowIntro && (
+              {/* {isShowIntro && (
                 <div className={styles['intro'] + ' sm:group-hover:block'}>
                   {icon && <img className={styles['icon']} src={icon} />}
                   <span>{desc}</span> {tag && <Tags tags={tag} />}
                 </div>
-              )}
-              <div className={styles['info'] + ' text-xs select-none'}>{updateAt}</div>
+              )} */}
+              {/* <div className={styles['info'] + ' text-xs select-none'}>{updateAt}</div> */}
             </div>
           );
         }

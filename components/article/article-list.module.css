@@ -1,17 +1,21 @@
 .article-item {
-  color: #573523;
+  @apply my-2;
   transition: 0.3s ease;
   position: relative;
 }
 
 .article-item:hover {
-  /* background-color: #e8deca; */
   border-color: #dbd0bc;
 }
 
 .article-item .title {
+  @apply inline-block text-lg font-bold px-2 py-1 rounded-md;
   color: #1d1d1f;
-  margin-bottom: 4px;
+}
+
+.article-item .title:hover {
+  background-color: #f0ece2;
+  color: #AF5C09;
 }
 
 .article-item .icon {
@@ -42,20 +46,13 @@
   display: none;
 }
 
-/* .article-item:hover .intro {
-  margin-bottom: 5px;
-  transition: 0.8s ease;
-} */
-
 .article-item .info {
   color: #aaa;
 }
 
-.article-item:not(:last-child) {
-  margin-bottom: 12px;
-}
-
-.article-item:active {
+.article-item:active .title {
   transform: translateY(3px);
   transition: 0.3s ease;
+  color: #1d1d1f;
+  background-color: transparent;
 }

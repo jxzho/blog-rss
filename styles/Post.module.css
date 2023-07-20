@@ -29,6 +29,7 @@
 }
 
 .headerInfo {
+  @apply font-semibold;
   color: #dcb789;
   font-size: 14px;
   display: flex;
