@@ -15,7 +15,7 @@
 
 .article-item .title:hover {
   background-color: #f0ece2;
-  color: #AF5C09;
+  color: #333;
 }
 
 .article-item .icon {
@@ -53,6 +53,6 @@
 .article-item:active .title {
   transform: translateY(3px);
   transition: 0.3s ease;
-  color: #1d1d1f;
+  color: #AF5C09;
   background-color: transparent;
 }

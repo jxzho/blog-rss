@@ -28,7 +28,7 @@ code:not([class*='language-']) {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', ui-monospace,
     monospace;
   background-color: #f2e2cb;
-  @apply text-xs font-bold px-2 py-1;
+  @apply text-xs font-bold px-2 py-1 rounded-md;
 }
 
 ::selection {
