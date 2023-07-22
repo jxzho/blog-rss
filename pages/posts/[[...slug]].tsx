@@ -1,12 +1,13 @@
 import type { NextPage } from 'next';
 import Head from 'next/head'
-import { getAllPosts, getPostBySlug } from '../../utils/index';
-import styles from '../../styles/Post.module.css';
+import { getAllPosts, getPostBySlug } from '../../utils';
 import { markdownToHtml } from '../../lib';
 import { PostBody } from '../../components/post/post-body';
 import { IconBack } from '../../components/icon-back/icon-back';
 import { IconHome } from '../../components/icon-home/icon-home';
 import { Tags } from '../../components/tags/tags';
+import styles from '../../styles/Post.module.css';
+import { useState } from "react";
 
 type PostProps = {
   title: string;
@@ -17,15 +18,27 @@ type PostProps = {
 };
 
 const Posts: NextPage<PostProps> = ({ title, tag, icon, content, updateAt }) => {
+  const [modeFocus, setModeFocus] = useState(false)
+
+  const enterMainContent = () => {
+    setModeFocus(true)
+  }
+
+  const leaveMainContent = () => {
+    setModeFocus(false)
+  }
+
+  const isFocusClass = modeFocus ? styles.focus : styles.normal
+
   return (
     <div className={styles.container}>
-      
+
       <Head>
         <title>《{ title }》Russell&apos;s Blog</title>
       </Head>
 
       <article className={styles.article}>
-        <header className={styles.header}>
+        <header className={`${styles.header} ${isFocusClass}`}>
           <div className="flex justify-between mb-5">
             <IconBack />
             <IconHome />
@@ -35,13 +48,19 @@ const Posts: NextPage<PostProps> = ({ title, tag, icon, content, updateAt }) => 
             <div className={styles.headerInfoRight}>共 {content.length} 字</div>
           </div>
         </header>
-        <div className={styles.tagBar}>
+        <div className={`${styles.tagBar} ${isFocusClass}`}>
           {icon && <img className={styles.icon} src={icon} />}
           <Tags tags={tag} />
         </div>
-        <h1>{title}</h1>
-        <div className={styles.contents}>
-          <PostBody content={content} />
+        <div
+          className="view-main-content"
+          onMouseEnter={enterMainContent}
+          onMouseLeave={leaveMainContent}
+        >
+          <h1>{title}</h1>
+          <div className={styles.contents}>
+            <PostBody content={content} />
+          </div>
         </div>
       </article>
     </div>

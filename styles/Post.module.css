@@ -29,12 +29,24 @@
 }
 
 .headerInfo {
-  @apply font-semibold;
   color: #dcb789;
   font-size: 14px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
+}
+
+.focus {
+  @apply max-h-0 transition-all opacity-0 duration-500;
+}
+
+.normal {
+  @apply transition-all duration-300;
+  max-height: 88px;
+}
+
+.view-main-content {
+  @apply transition-all;
 }
 
 .tagBar {
