@@ -7,7 +7,6 @@ import { IconBack } from '../../components/icon-back/icon-back';
 import { IconHome } from '../../components/icon-home/icon-home';
 import { Tags } from '../../components/tags/tags';
 import styles from '../../styles/Post.module.css';
-import { useState } from "react";
 
 type PostProps = {
   title: string;
@@ -18,27 +17,15 @@ type PostProps = {
 };
 
 const Posts: NextPage<PostProps> = ({ title, tag, icon, content, updateAt }) => {
-  const [modeFocus, setModeFocus] = useState(false)
-
-  const enterMainContent = () => {
-    setModeFocus(true)
-  }
-
-  const leaveMainContent = () => {
-    setModeFocus(false)
-  }
-
-  const isFocusClass = modeFocus ? styles.focus : styles.normal
-
   return (
     <div className={styles.container}>
 
       <Head>
-        <title>《{ title }》Russell&apos;s Blog</title>
+        <title>《{ title || ' ? ' }》Russell&apos;s Blog</title>
       </Head>
 
       <article className={styles.article}>
-        <header className={`${styles.header} ${isFocusClass}`}>
+        <header className={`${styles.header}`}>
           <div className="flex justify-between mb-5">
             <IconBack />
             <IconHome />
@@ -48,15 +35,11 @@ const Posts: NextPage<PostProps> = ({ title, tag, icon, content, updateAt }) => 
             <div className={styles.headerInfoRight}>共 {content.length} 字</div>
           </div>
         </header>
-        <div className={`${styles.tagBar} ${isFocusClass}`}>
+        <div className={`${styles.tagBar}`}>
           {icon && <img className={styles.icon} src={icon} />}
           <Tags tags={tag} />
         </div>
-        <div
-          className="view-main-content"
-          onMouseEnter={enterMainContent}
-          onMouseLeave={leaveMainContent}
-        >
+        <div className="view-main-content">
           <h1>{title}</h1>
           <div className={styles.contents}>
             <PostBody content={content} />

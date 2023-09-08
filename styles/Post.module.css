@@ -14,6 +14,8 @@
 }
 
 .header {
+  @apply transition-all duration-300;
+  max-height: 88px;
   position: relative;
   border-bottom: 1px solid #e3b888;
 }
@@ -36,21 +38,13 @@
   margin-bottom: 8px;
 }
 
-.focus {
-  @apply max-h-0 transition-all opacity-0 duration-500;
-}
-
-.normal {
-  @apply transition-all duration-300;
-  max-height: 88px;
-}
-
 .view-main-content {
   @apply transition-all;
 }
 
 .tagBar {
-  @apply my-3.5;
+  @apply my-3.5 transition-all duration-300;
+  max-height: 88px;
 }
 
 .icon {
