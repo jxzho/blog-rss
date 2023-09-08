@@ -14,8 +14,12 @@ const postSuffixByType = {
   markdown: 'md'
 }
 
-export const getPostBySlug = (slug: string[]) => {
-  const path4Slug = join(postDir, ...slug) + '.' + postSuffixByType.markdown;
+export const getPostBySlug = (slug: string[] | string | undefined) => {
+  if (!slug || !Array.isArray(slug)) {
+    throw Error('Blog requires a parent directory')
+  }
+
+  const path4Slug = join(postDir, ...slug) + '.' + postSuffixByType.markdown
   const fileContents = fs.readFileSync(path4Slug, 'utf8');
   const { data, content } = matter(fileContents);
 

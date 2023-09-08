@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head'
 import { getAllPosts, getPostBySlug } from '../../utils';
 import { markdownToHtml } from '../../lib';
@@ -50,9 +50,9 @@ const Posts: NextPage<PostProps> = ({ title, tag, icon, content, updateAt }) => 
   );
 };
 
-// 静态传参
-export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug);
+// Static Props
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const post = getPostBySlug(params?.slug);
   const content = await markdownToHtml(post.content || '');
   const { data } = post;
   return {
@@ -66,7 +66,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-// 获取所有静态路径
+// Get All Static Post Paths
 export const getStaticPaths = async () => {
   const posts = getAllPosts();
   return {
