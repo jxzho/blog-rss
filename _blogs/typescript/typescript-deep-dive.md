@@ -79,3 +79,4 @@ __使用 `satisfies` 后__
 ### 参考
 
 - [TypeScript 教程](https://wangdoc.com/typescript)
+- [TS 类型挑战](https://github.com/type-challenges/type-challenges)
