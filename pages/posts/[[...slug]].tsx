@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head'
+import Image from 'next/image'
 import { getAllPosts, getPostBySlug } from '../../utils';
 import { markdownToHtml } from '../../lib';
 import { PostBody } from '../../components/post/post-body';
@@ -19,7 +20,6 @@ type PostProps = {
 const Posts: NextPage<PostProps> = ({ title, tag, icon, content, updateAt }) => {
   return (
     <div className={styles.container}>
-
       <Head>
         <title>《{ title || ' ? ' }》Russell&apos;s Blog</title>
       </Head>
@@ -36,7 +36,7 @@ const Posts: NextPage<PostProps> = ({ title, tag, icon, content, updateAt }) => 
           </div>
         </header>
         <div className={`${styles.tagBar}`}>
-          {icon && <img className={styles.icon} src={icon} />}
+          {icon && <Image className={styles.icon} src={icon} alt="icon-tag" width={20} height={20} />}
           <Tags tags={tag} />
         </div>
         <div className="view-main-content">

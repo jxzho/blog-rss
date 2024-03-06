@@ -83,3 +83,8 @@
 .article h6 {
   font-size: 1em;
 }
+
+.tag-wrap {
+  margin-right: .2rem;
+  display: inline-block;
+}
