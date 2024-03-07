@@ -7,7 +7,7 @@
   margin-bottom: 8px;
   display: inline-block;
   vertical-align: top;
-  @apply text-xs;
+  @apply text-xs leading-normal;
 }
 
 .tag::selection {

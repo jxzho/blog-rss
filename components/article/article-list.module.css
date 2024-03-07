@@ -9,7 +9,7 @@
 }
 
 .article-item .title {
-  @apply inline-block text-lg font-bold px-2 py-1 rounded-md;
+  @apply inline-block text-lg font-bold px-2 py-1 rounded-md leading-normal;
   color: #1d1d1f;
 }
 
