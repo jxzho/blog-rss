@@ -61,3 +61,7 @@
 .markdown p {
   @apply md:my-5 my-3;
 }
+
+.markdown hr {
+  @apply text-gray-50 border-t-[.1px] border-solid border-gray-300 border-b-0;
+}
