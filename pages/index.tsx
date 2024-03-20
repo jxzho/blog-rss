@@ -26,7 +26,7 @@ const Home: NextPage = ({ posts, tagMap }: any) => {
       <main className={styles.main}>
         <div className="sm:w-96 mx-auto">
           <h1 className={styles.title + ' sm:my-6'} onClick={onTitleClick}>
-            文章
+            BLOG
           </h1>
           <div className="sm:my-6">
             {Object.keys(tagMap).map((tag, index) => (
